@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <h1>金種計算システム</h1>
+  <form>
+    <label for="10k">10,000円札:</label>
+    <input type="number" id="10k" name="10k" value="0"><br><br>
+    <label for="5k">5,000円札:</label>
+    <input type="number" id="5k" name="5k" value="0"><br><br>
+    <label for="1k">1,000円札:</label>
+    <input type="number" id="1k" name="1k" value="0"><br><br>
+    <label for="500">500円玉:</label>
+    <input type="number" id="500" name="500" value="0"><br><br>
+    <label for="100">100円玉:</label>
+    <input type="number" id="100" name="100" value="0"><br><br>
+    <label for="50">50円玉:</label>
+    <input type="number" id="50" name="50" value="0"><br><br>
+    <label for="10">10円玉:</label>
+    <input type="number" id="10" name="10" value="0"><br><br>
+    <label for="5">5円玉:</label>
+    <input type="number" id="5" name="5" value="0"><br><br>
+    <label for="1">1円玉:</label>
+    <input type="number" id="1" name="1" value="0"><br><br>
+    <input type="button" value="計算する" onclick="calculateSales()">
+  </form>
+  <br>
+  <div id="result"></div>
+
+  <script>
+    // 計算するボタンがクリックされたときに実行される関数
+function calculateSales() {
+    // 入力された金額を取得
+    var _10k = parseInt(document.getElementById("10k").value);
+    var _5k = parseInt(document.getElementById("5k").value);
+    var _1k = parseInt(document.getElementById("1k").value);
+    var _500 = parseInt(document.getElementById("500").value);
+    var _100 = parseInt(document.getElementById("100").value);
+    var _50 = parseInt(document.getElementById("50").value);
+    var _10 = parseInt(document.getElementById("10").value);
+    var _5 = parseInt(document.getElementById("5").value);
+    var _1 = parseInt(document.getElementById("1").value);
+  
+    // 合計金額を計算
+    var total = (_10k * 10000) + (_5k * 5000) + (_1k * 1000) + (_500 * 500) + (_100 * 100) + (_50 * 50) + (_10 * 10) + (_5 * 5) + _1;
+  
+    // 売上を計算
+    var sales = total - 50000;
+  
+    // 計算結果を表示
+    var resultElement = document.getElementById("result");
+    resultElement.innerHTML = "合計金額: " + total + "円<br>売上: " + sales + "円";
+  }
+  
+  </script>
+</body>
+</html>
